@@ -22,9 +22,10 @@ test_06:
 max_value([2, 5, 1, 1, 4]) # -> 5
 '''
 
+
 def max_value(nums):
-  maximum = nums[0]
-  for num in nums:
-    if num > maximum:
-      maximum = num
-  return maximum
+    maximum = nums[0]
+    for num in nums:
+        if num > maximum:
+            maximum = num
+    return maximum

@@ -12,5 +12,6 @@ test_02:
 greet("how now brown cow") # -> 'hey how now brown cow'
 '''
 
+
 def greet(s):
-  return f"hey {s}"
+    return f"hey {s}"
