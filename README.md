@@ -1,1 +1,1 @@
-Code related to [Structy](https://structy.net/problems/)
+Code related to [Structy](https://structy.net/problem-index)
