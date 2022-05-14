@@ -51,10 +51,12 @@ def linked_list_values(node):
     # return linked_list_values_recursive(node, [])
 
     # Recursive 2
-    values = []
-    # accumulate values in 'values' list through the function
-    linked_list_values_recursive2(node, values)
-    return values
+    # values = []
+    # linked_list_values_recursive2(node, values)
+    # return values
+
+    # Recursive 3
+    return linked_list_values_recursive3(node)
 
 
 def linked_list_values_iterative(node):
@@ -81,3 +83,10 @@ def linked_list_values_recursive2(node, values):
 
     values.append(node.val)
     linked_list_values_recursive2(node.next, values)
+
+
+def linked_list_values_recursive3(node):
+    if node is None:
+        return []
+
+    return [node.val] + linked_list_values_recursive3(node.next)
