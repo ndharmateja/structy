@@ -23,4 +23,15 @@ def print_list(node):
         curr = curr.next
 
 
+def print_list_recursive(node):
+    if node is None:
+        return
+    print(node.value)
+    print_list_recursive(node.next)
+
+
+print("Iterative: ")
 print_list(a)
+
+print("Recursive: ")
+print_list_recursive(a)
