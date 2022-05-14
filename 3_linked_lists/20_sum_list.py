@@ -45,7 +45,10 @@ class Node:
 
 def sum_list(head):
     # Iterative
-    return sum_list_iterative(head)
+    # return sum_list_iterative(head)
+
+    # Recursive
+    return sum_list_recursive(head)
 
 
 def sum_list_iterative(head):
@@ -55,3 +58,9 @@ def sum_list_iterative(head):
         sum += curr.val
         curr = curr.next
     return sum
+
+
+def sum_list_recursive(head):
+    if head is None:
+        return 0
+    return head.val + sum_list_recursive(head.next)
