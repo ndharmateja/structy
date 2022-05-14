@@ -69,6 +69,7 @@ def linked_list_values_iterative(node):
     return values
 
 
+# The recursive function returns the passed parameter 'values'
 def linked_list_values_recursive(node, values):
     if node is None:
         return values
@@ -77,6 +78,8 @@ def linked_list_values_recursive(node, values):
     return linked_list_values_recursive(node.next, values)
 
 
+# The recursive function accumulates the values in the 'values' list
+# which is passed to the function and it returns nothing
 def linked_list_values_recursive2(node, values):
     if node is None:
         return
@@ -85,6 +88,9 @@ def linked_list_values_recursive2(node, values):
     linked_list_values_recursive2(node.next, values)
 
 
+# The recursive function doesn't take any values parameter
+# but just creates a list from the current value and the
+# output list from recursively called function on node.next
 def linked_list_values_recursive3(node):
     if node is None:
         return []
