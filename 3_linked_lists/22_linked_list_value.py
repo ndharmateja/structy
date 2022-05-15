@@ -71,7 +71,11 @@ class Node:
 
 
 def get_node_value(head, index):
-    return get_node_value_iterative(head, index)
+    # Iterative
+    # return get_node_value_iterative(head, index)
+
+    # Recursive
+    return get_node_value_recursive(head, index, 0)
 
 
 def get_node_value_iterative(head, index):
@@ -86,6 +90,14 @@ def get_node_value_iterative(head, index):
         curr_index += 1
 
     return None if curr is None else curr.val
+
+
+def get_node_value_recursive(head, index, curr_index):
+    if head is None:
+        return None
+    if index == curr_index:
+        return head.val
+    return get_node_value_recursive(head.next, index, curr_index + 1)
 
 
 # test_00
