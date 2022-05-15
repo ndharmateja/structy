@@ -78,6 +78,7 @@ def get_node_value(head, index):
     return get_node_value_recursive(head, index, 0)
 
 
+# TC - O(n) SC - O(1)
 def get_node_value_iterative(head, index):
     if head is None:
         return None
@@ -92,6 +93,7 @@ def get_node_value_iterative(head, index):
     return None if curr is None else curr.val
 
 
+# TC - O(n) SC - O(n)
 def get_node_value_recursive(head, index, curr_index):
     if head is None:
         return None
