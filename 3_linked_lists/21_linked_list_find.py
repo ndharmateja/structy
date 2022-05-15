@@ -72,7 +72,11 @@ class Node:
 
 
 def linked_list_find(head, target):
-    return linked_list_find_iterative(head, target)
+    # Iterative
+    # return linked_list_find_iterative(head, target)
+
+    # Recursive
+    return linked_list_find_recursive(head, target)
 
 
 def linked_list_find_iterative(head, target):
@@ -84,3 +88,11 @@ def linked_list_find_iterative(head, target):
             return True
         curr = curr.next
     return False
+
+
+def linked_list_find_recursive(head, target):
+    if head is None:
+        return False
+    if head.val == target:
+        return True
+    return linked_list_find_recursive(head.next, target)
