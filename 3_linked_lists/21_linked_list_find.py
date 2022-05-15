@@ -79,6 +79,7 @@ def linked_list_find(head, target):
     return linked_list_find_recursive(head, target)
 
 
+# TC - O(n), SC - O(1)
 def linked_list_find_iterative(head, target):
     if head is None:
         return False
@@ -90,6 +91,7 @@ def linked_list_find_iterative(head, target):
     return False
 
 
+# TC - O(n), SC - O(n)
 def linked_list_find_recursive(head, target):
     if head is None:
         return False
