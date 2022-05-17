@@ -53,6 +53,7 @@ tree_sum(a) # -> 10
 test_02:
 tree_sum(None) # -> 0
 '''
+from queue import Queue
 
 
 class Node:
@@ -63,6 +64,33 @@ class Node:
 
 
 def tree_sum(root):
+    # Iterative
+    return tree_sum_iterative(root)
+
+    # Recursive
+    # return tree_sum_recursive(root)
+
+
+def tree_sum_iterative(root):
+    if root is None:
+        return 0
+
+    total = 0
+    q = Queue()
+    q.put(root)
+    while not q.empty():
+        curr = q.get()
+        total += curr.val
+
+        if curr.left is not None:
+            q.put(curr.left)
+        if curr.right is not None:
+            q.put(curr.right)
+
+    return total
+
+
+def tree_sum_recursive(root):
     if root is None:
         return 0
     return root.val + tree_sum(root.left) + tree_sum(root.right)
