@@ -121,6 +121,7 @@ tree_includes(a, "p")  # -> False
 test_05:
 tree_includes(None, "b")  # -> False
 '''
+from queue import Queue
 
 
 class Node:
@@ -131,7 +132,35 @@ class Node:
 
 
 def tree_includes(root, target):
+    # Iterative
+    return tree_includes_iterative(root, target)
+
+    # Recursive
+    # return tree_includes_recursive(root, target)
+
+
+def tree_includes_recursive(root, target):
     if root is None:
         return False
 
-    return root.val == target or tree_includes(root.left, target) or tree_includes(root.right, target)
+    return root.val == target or tree_includes_recursive(
+        root.left, target) or tree_includes_recursive(
+        root.right, target)
+
+
+def tree_includes_iterative(root, target):
+    if root is None:
+        return []
+
+    queue = Queue()
+    queue.put(root)
+    while not queue.empty():
+        curr = queue.get()
+        if curr.val == target:
+            return True
+        if curr.left is not None:
+            queue.put(curr.left)
+        if curr.right is not None:
+            queue.put(curr.right)
+
+    return False
