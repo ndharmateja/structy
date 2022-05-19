@@ -92,6 +92,18 @@ class Node:
 
 
 def depth_first_values(root):
+    # Iterative
+    # return depth_first_values_iterative(root)
+
+    # Recursive
+    # values = []
+    # depth_first_values_recursive(root, values)
+    # return values
+
+    # Recursive 2
+    return depth_first_values_recursive2(root)
+
+def depth_first_values_iterative(root):
     if root is None:
         return []
 
@@ -107,3 +119,19 @@ def depth_first_values(root):
             stack.append(curr.left)
 
     return values
+
+
+def depth_first_values_recursive(root, values):
+    if root is None:
+        return
+
+    values.append(root.val)
+    depth_first_values_recursive(root.left, values)
+    depth_first_values_recursive(root.right, values)
+
+
+def depth_first_values_recursive2(root):
+    if root is None:
+        return []
+
+    return [root.val] + depth_first_values_recursive2(root.left) + depth_first_values_recursive2(root.right)
