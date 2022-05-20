@@ -93,8 +93,11 @@ def tree_min_value(root):
     # Iterative
     # return tree_min_value_iterative(root)
 
+    # Iterative 2
+    return tree_min_value_iterative2(root)
+
     # Recursive
-    return tree_min_value_recursive(root)
+    # return tree_min_value_recursive(root)
 
 
 def tree_min_value_recursive(root):
@@ -117,5 +120,23 @@ def tree_min_value_iterative(root):
             queue.put(curr.left)
         if curr.right is not None:
             queue.put(curr.right)
+
+    return min_value
+
+
+# Using DFS
+def tree_min_value_iterative2(root):
+    min_value = float('inf')
+    stack = [root]
+    while len(stack) > 0:
+        curr = stack.pop()
+
+        if curr.val < min_value:
+            min_value = curr.val
+
+        if curr.left is not None:
+            stack.append(curr.left)
+        if curr.right is not None:
+            stack.append(curr.right)
 
     return min_value
